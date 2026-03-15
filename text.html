@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blur Card</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0f0f0f] text-white flex justify-center items-center min-h-screen">
+
+<div class="w-full max-w-5xl p-6 bg-[#111] rounded-2xl shadow-xl">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+    <input
+      id="searchInput"
+      class="w-full sm:w-2/3 px-5 py-3 rounded outline-none bg-[#1a1a1a] text-white placeholder:text-[#777] shadow-inner"
+      type="search"
+      placeholder="Search users by name or bio..."
+      autocomplete="off"
+    />
+
+    <div class="flex items-center gap-2">
+      <button id="clearBtn" class="px-4 py-2 rounded bg-[#333] hover:bg-[#4b4b4b] text-sm">Clear</button>
+      <span id="stats" class="text-[#aaa] text-sm">Type to search</span>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+    <div class="flex items-center gap-2">
+      <label for="sortSelect" class="text-sm text-[#bbb]">Sort:</label>
+      <select id="sortSelect" class="px-3 py-1.5 rounded bg-[#222] text-white text-sm outline-none">
+        <option value="relevance">Relevance</option>
+        <option value="az">Name A-Z</option>
+        <option value="za">Name Z-A</option>
+        <option value="role">Role</option>
+      </select>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-[#bbb]">
+      <input id="fuzzyCheck" type="checkbox" class="accent-blue-500" />
+      <label for="fuzzyCheck">Fuzzy matching</label>
+    </div>
+  </div>
+
+  <div id="filterChips" class="flex flex-wrap gap-2 mb-4"></div>
+
+  <div id="userGrid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

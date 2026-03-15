@@ -1,0 +1,75 @@
+.card{
+  position: relative;
+  width: 100%;
+  min-height: 330px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: default;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.65);
+}
+
+.card.selected{
+  outline: 2px solid #60a5fa;
+  transform: translateY(-2px);
+  box-shadow: 0 22px 40px rgba(56, 189, 248, 0.6);
+}
+
+.bg-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.blurred-layer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.38);
+  opacity: 0;
+  transition: 0.35s;
+}
+
+.card:hover .blurred-layer{
+  opacity: 1;
+}
+
+.content{
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  color: white;
+  z-index: 10;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.7);
+}
+
+.content h3{
+  margin: 0 0 4px;
+}
+
+.content p{
+  margin: 2px 0;
+  font-size: 13px;
+  color: #dcdcdc;
+}
+
+mark.match{
+  background-color: rgba(59, 130, 246, 0.5);
+  color: #eef;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+#userGrid{
+  min-height: 220px;
+}
+
