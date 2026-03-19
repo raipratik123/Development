@@ -25,8 +25,8 @@ function createtoaster(config) {
 
 
 let toaster = createtoaster({
-    positionX:"left",
-    positionY:"bottom",
+    positionX:"right",
+    positionY:"top",
     theme:"dark",
     duration:10,     
 });
