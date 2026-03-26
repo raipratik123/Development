@@ -15,11 +15,22 @@
 //     console.log((this.style.color="red"));
 // })
 
+// let obj={
+//     name:"harsh",
+    
+// }
+// function abcd(){
+//     console.log(this);
+// }
+// abcd.call(obj);
+
 let obj={
     name:"harsh",
-    
+    age:26,
+
 }
 function abcd(){
-    console.log(this);
+   console.log(this);
 }
-abcd.call(obj);
+let fnc=abcd.bind(obj);
+fnc();

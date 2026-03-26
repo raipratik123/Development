@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User Cards UI</title>
+<style>
+  body {
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .form-card {
+    background: #18181b;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  .form-card input,
+  .form-card textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    background: #27272a;
+    border: 1px solid #3f3f46;
+    border-radius: 6px;
+    color: white;
+  }
+
+  .form-card button {
+    width: 100%;
+    padding: 10px;
+    background: #3f3f46;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .card {
+    background: #18181b;
+    padding: 20px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .role {
+    color: #a1a1aa;
+    font-size: 14px;
+  }
+
+  .bio {
+    font-size: 12px;
+    color: #71717a;
+    margin-top: 8px;
+  }
+</style>
+
+</head>
+<body>
+  
+    <form class="form-card">
+      <h2>Add User</h2>
+  <input type="text" placeholder="Name">
+  <input type="text" placeholder="Role">
+  <textarea placeholder="Bio"></textarea>
+  <input type="text" placeholder="Photo URL">
+<button type="submit">Submit</button>
+
+    </form>
+<div class="container">
+
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=1">
+    <h3>John Doe</h3>
+    <div class="role">Frontend Developer</div>
+    <div class="bio">Loves building beautiful UIs and learning new technologies.</div>
+  </div>
+
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=5">
+    <h3>Jane Smith</h3>
+    <div class="role">Backend Engineer</div>
+    <div class="bio">Enjoys solving complex problems and optimizing APIs.</div>
+  </div>
+
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=8">
+    <h3>Alex Lee</h3>
+    <div class="role">UI/UX Designer</div>
+    <div class="bio">Passionate about user experience and clean design.</div>
+  </div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html> 
