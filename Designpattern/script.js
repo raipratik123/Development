@@ -51,7 +51,7 @@
 // let kitkat=createProduct("kitkat",10);
 // kitkat.buy(20); yaha hai khatam hogya hai 
 
-// class  YoutubeChannel{
+// class  YoutubeChannel{ Observer Pattern
 //     constructor(){
 //         this.subscribers=[];
        
@@ -111,27 +111,105 @@
 // let user1=new User("Harsh");
 // sheriyansh.subscribe(user1);
 // sheriyansh.notify("New vedio is uploaded");
-class EmailService{
-    constructor(){
-        this.email=[];
-    }
-    register(users){
-        this.email.push(users);
-        users.update(`you got a new email`);
-    }
-    notify(message){
-        this.email.forEach((em)=>em.update(message));
-    }
-}
-class User{
-    constructor(name){
-        this.name=name;
-    }
-    update(data){
-        console.log(`${this.name},${data}`);
-    }
+// class EmailService{
+//     constructor(){
+//         this.email=[];
+//     }
+//     register(users){
+//         this.email.push(users);
+//         users.update(`you got a new email`);
+//     }
+//     notify(message){
+//         this.email.forEach((em)=>em.update(message));
+//     }
+// }
+// class User{
+//     constructor(name){
+//         this.name=name;
+//     }
+//     update(data){
+//         console.log(`${this.name},${data}`);
+//     }
 
-}
-let sheriyans=new EmailService();
-let user1=new User("harsh");
-sheriyans.register(user1);
+// }
+// let sheriyans=new EmailService();
+// let user1=new User("harsh");
+// sheriyans.register(user1);
+//yeah khatam hua hai
+// function debounce(fnc,delay){
+//    let timer;
+//    return function(...args){
+//       clearTimeout(timer);
+//       timer=setTimeout(function(){
+//          fnc(...args);
+//       },delay);
+//    };
+// }
+// document.querySelector("input").addEventListener(
+//    "input",
+//    debounce(function(){
+//       console.log("hey");
+//    },1000)
+// );
+// function debounce(fnc,delay){ // Debouncing
+//    let timer;
+//    return function(...args){
+//       clearTimeout(timer);8
+//       timer=setTimeout(()=>{
+//          fnc(...args);
+//       },delay);
+//    };
+// }
+// let input=document.querySelector("input");
+// input.addEventListener("input",debounce(function(dets){
+// console.log("ran");
+// },1000)
+// )  yeah khatam hai bro
+
+// function throttle(fnc,delay){
+//    let timer=0;
+//    return function(...args){
+//       let now=Date.now();  
+//       if(now-timer>=delay){
+//          timer=now;
+//          fnc(...args);
+//       }
+//    };
+// }
+// let input=document.querySelector("input");
+// input.addEventListener("input",throttle(function(){
+//    console.log("ran");
+// },1000)
+// );
+// function throttle(fnc, delay){
+//    let timer=0;
+//    return function(...args){
+//       let now=Date.now();
+//       if(now-timer>=delay){
+//          timer=now;
+//          fnc(...args);
+//       }
+//    }
+// }
+// let input=document.querySelector("input");
+// input.addEventListener("input",throttle(function(){
+//    console.log("how are you buddy");
+// },1000))
+let imgs=document.querySelectorAll("img");
+const observer=new IntersectionObserver(function(entries, observer){
+   entries.forEach(function(entry){
+      if(entry.isIntersecting){
+         const img=entry.target;
+         img.src=img.dataset.src;
+         img.classList.add("loaded");
+         observer.unobserve(entry)
+
+      }
+   });
+},{
+   root:null,
+   threshold:0.1,
+});
+imgs.forEach(function(img){
+observer.observe(img);
+});
